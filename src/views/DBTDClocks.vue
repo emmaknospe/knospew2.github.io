@@ -5,13 +5,15 @@
       export default{
           data() {
               return {
-                  clocks: []
-              } as {clocks: ClockType[]}
+                  clocks: [],
+                  loaded: false
+              } as {clocks: ClockType[], loaded: boolean}
           },
           methods: {
             async getData() {
               const res = await fetch("https://x8ki-letl-twmt.n7.xano.io/api:eyXtWEG6/clocks");
               this.clocks = (await res.json()) as ClockType[];
+              this.loaded = true;
             }
           },
           computed: {
@@ -33,6 +35,9 @@
 <template>
   <main>
     <h2>DBTD Clocks</h2>
+    <div v-if="!loaded">
+      <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div> 
     <Clock 
     v-for="clock in visibleClocks"
     :key="clock.name" 
