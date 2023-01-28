@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Winter",
+    "descr": "Test Clock",
+    "max": 10,
+    "last_recorded_value": 3,
+    "value": 6,
+    "max_resolve": "Clock dies",
+    "min_resolve": "Clock lives",
+    "visible": ["name", "descr", "progress", "max_resolve", "min_resolve"],
+    "is_up_to_date": true
+  }
+]

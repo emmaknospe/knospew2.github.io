@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dreamers Beyond the Dragonsteeth</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>Dreamers Beyond the Dragonsteeth</h1>
+<div id="clocks">
+
+</div>
+<script>
+    $.getJSON( "https://knospew2.github.io/clocks.json", {}, function (data) {
+        const clocks = data.clocks;
+        clocks.forEach(function (clock) {
+            $("#clocks").append()
+        });
+        $("#clocks")
+    })
+</script>
+</body>
+</html>
