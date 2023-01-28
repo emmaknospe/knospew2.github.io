@@ -1,16 +1,17 @@
 <script lang="ts">
       import Clock from "../components/Clock.vue"
+      import type { ClockType } from "../types"
 
       export default{
           data() {
-              return{
+              return {
                   clocks: []
-              }
+              } as {clocks: ClockType[]}
           },
           methods: {
             async getData() {
               const res = await fetch("https://x8ki-letl-twmt.n7.xano.io/api:eyXtWEG6/clocks");
-              this.clocks = await res.json();
+              this.clocks = (await res.json()) as ClockType[];
             }
           },
           computed: {
