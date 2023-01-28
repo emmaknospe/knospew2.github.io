@@ -1,12 +1,17 @@
 <script lang="ts">
-      import json from '../data/clocks.json'
       import Clock from "../components/Clock.vue"
 
       export default{
           data() {
               return{
-                  clocks: json
+                  clocks: []
               }
+          },
+          methods: {
+            async getData() {
+              const res = await fetch("https://x8ki-letl-twmt.n7.xano.io/api:eyXtWEG6/clocks");
+              this.clocks = await res.json();
+            }
           },
           computed: {
             visibleClocks() {
@@ -17,6 +22,9 @@
           },
           components: {
               Clock
+          },
+          mounted() {
+            this.getData()
           }
       }
       
