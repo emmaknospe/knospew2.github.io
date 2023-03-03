@@ -10,9 +10,9 @@ export default {
     'clock-bar-up-to-date': is_up_to_date,
     'clock-bar-out-of-date': !is_up_to_date
   }">
-    <div class="clock-bar-title"><h4>{{ visible.includes('name') ? name : 'unknown' }}</h4></div>
+    <div class="clock-bar-title"><h4>{{ visible.includes('name') ? name : '??' }}</h4></div>
     <div class="clock-bar-container">
-        <div class="clock-bar-left-label">{{ visible.includes('min_resolve') ? min_resolve : 'unknown' }}</div>
+        <div class="clock-bar-left-label">{{ visible.includes('min_resolve') ? min_resolve : '??' }}</div>
         <div class="clock-bar-outer">
           <div class="clock-bar-inner"
            v-if="visible.includes('progress')" 
@@ -20,10 +20,10 @@ export default {
           </div>
         </div>
         <div class="clock-bar-progress">{{ last_recorded_value }} / {{ max }}</div>
-        <div class="clock-bar-right-label">{{ visible.includes('max_resolve') ? max_resolve : 'unknown' }}</div>
+        <div class="clock-bar-right-label">{{ visible.includes('max_resolve') ? max_resolve : '??' }}</div>
     </div>
     <div class="clock-bar-descr">
-      {{ visible.includes('descr') ? descr : 'unknown' }}
+      {{ visible.includes('descr') ? descr : '??' }}
     </div>
   </div>
 </template>

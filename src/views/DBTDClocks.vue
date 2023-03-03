@@ -19,7 +19,15 @@
           computed: {
             visibleClocks() {
               return this.clocks.filter(function(clock) {
-                return clock.visible;
+                return clock.visible && clock.visible.length > 0;
+              }).sort(function(clock_a: ClockType, clock_b: ClockType) {
+                if (clock_a.name > clock_b.name) {
+                  return 1;
+                } 
+                if (clock_b.name > clock_a.name) {
+                  return -1;
+                }
+                return 0;
               })
             }
           },
