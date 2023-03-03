@@ -19,7 +19,7 @@ export default {
            :style="{ width: `${(100 * (last_recorded_value / max)).toFixed(2)}%`}">
           </div>
         </div>
-        <div class="clock-bar-progress">{{ last_recorded_value }} / {{ max }}</div>
+        <div class="clock-bar-progress">{{ visible.includes('progress') ? last_recorded_value : '??'}} / {{ max }}</div>
         <div class="clock-bar-right-label">{{ visible.includes('max_resolve') ? max_resolve : '??' }}</div>
     </div>
     <div class="clock-bar-descr">
