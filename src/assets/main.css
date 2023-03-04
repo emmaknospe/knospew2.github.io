@@ -560,14 +560,27 @@ blockquote footer {
   width: 1100px;
   border: 2px solid black;
   border-radius: 4px;
+  margin: 20px;
 }
 
 .clock-bar-up-to-date {
-  background-color: lightgreen;
+  border: 2px solid black;
 }
 
 .clock-bar-out-of-date {
+  border: 2px dashed black;
+}
+
+.clock-bar-hostile {
   background-color: lightcoral;
+}
+
+.clock-bar-neutral {
+  background-color: lightgray;
+}
+
+.clock-bar-friendly {
+  background-color: lightgreen;
 }
 
 .clock-bar-descr {

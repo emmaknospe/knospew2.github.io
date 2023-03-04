@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: ['name', 'descr', 'max', 'value', 'last_recorded_value', 'max_resolve', 'min_resolve', 'visible', 'is_up_to_date']
+    props: ['name', 'descr', 'max', 'value', 'last_recorded_value', 'max_resolve', 'min_resolve', 'visible', 'is_up_to_date', 'alignment']
 }
 </script>
 
@@ -8,7 +8,10 @@ export default {
   <div :class="{
     'clock-bar': true,
     'clock-bar-up-to-date': is_up_to_date,
-    'clock-bar-out-of-date': !is_up_to_date
+    'clock-bar-out-of-date': !is_up_to_date,
+    'clock-bar-neutral': alignment === 'neutral',
+    'clock-bar-hostile': alignment === 'hostile',
+    'clock-bar-friendly': alignment === 'friendly'
   }">
     <div class="clock-bar-title"><h4>{{ visible.includes('name') ? name : '??' }}</h4></div>
     <div class="clock-bar-container">

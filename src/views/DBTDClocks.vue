@@ -21,6 +21,12 @@
               return this.clocks.filter(function(clock) {
                 return clock.visible && clock.visible.length > 0;
               }).sort(function(clock_a: ClockType, clock_b: ClockType) {
+                if (clock_a.is_up_to_date && !clock_b.is_up_to_date) {
+                  return -1;
+                }
+                if (clock_b.is_up_to_date && !clock_a.is_up_to_date) {
+                  return 1;
+                }
                 if (clock_a.name > clock_b.name) {
                   return 1;
                 } 
@@ -56,7 +62,9 @@
     :value="clock.value"
     :max_resolve="clock.max_resolve"
     :min_resolve="clock.min_resolve"
-    :visible="clock.visible"/>
+    :visible="clock.visible"
+    :is_up_to_date="clock.is_up_to_date"
+    :alignment="clock.alignment"/>
   </main>
 </template>
 

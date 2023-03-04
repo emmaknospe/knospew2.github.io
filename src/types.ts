@@ -10,4 +10,5 @@ export interface ClockType {
     min_resolve: string;
     visible: string[];
     is_up_to_date: boolean;
+    alignment: 'hostile' | 'friendly' | 'neutral';
 }
